@@ -14,11 +14,7 @@ for line in fh:
     if line.startswith('From '):
         l_line = line.split()
         key_info = l_line[1]
-        if key_info not in aux_dict:
-            aux_dict[key_info] = 1
-        else:
-            value = aux_dict[key_info]
-            aux_dict[key_info] = value + 1
+        aux_dict[key_info] = aux_dict.get(key_info,0) + 1
     else:
         continue
 
